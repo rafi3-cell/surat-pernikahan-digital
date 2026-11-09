@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wedding Oman & Siti</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Georgia,serif;
+  background:#faf4eb;color:#594537;
+  text-align:center;line-height:1.8
+}
+.cover{
+  min-height:100vh;display:flex;align-items:center;
+  justify-content:center;padding:25px;color:white;
+  background:linear-gradient(#0005,#0008),
+  url("https://images.unsplash.com/photo-1519741497674-611481863552?w=1200")
+  center/cover;
+}
+.cover h1{font-size:clamp(42px,9vw,72px);margin:20px 0}
+button,.btn{
+  display:inline-block;border:0;border-radius:30px;
+  padding:12px 25px;background:#9b7959;color:white;
+  text-decoration:none;cursor:pointer;margin-top:15px
+}
+section{padding:65px 18px}
+.alt{background:#eee1d1}
+h2{font-size:32px;font-weight:normal;font-style:italic;margin-bottom:20px}
+p{margin:8px 0}
+.small{letter-spacing:3px;font-size:12px}
+.names{font-size:29px;color:#9b7959}
+.photos{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;max-width:750px;margin:25px auto
+}
+.photos img{
+  width:100%;height:260px;object-fit:cover;border-radius:10px
+}
+.profile{
+  max-width:350px;margin:25px auto;background:#fffdf9;
+  padding:20px;border-radius:15px
+}
+.profile img{
+  width:100%;height:300px;object-fit:cover;border-radius:10px
+}
+.card{
+  background:#fffdf9;max-width:430px;margin:18px auto;
+  padding:25px;border:1px solid #e3d1bb;border-radius:12px
+}
+.countdown{
+  display:flex;justify-content:center;gap:8px;margin:25px auto;
+  flex-wrap:wrap
+}
+.countdown div{
+  background:#fffdf9;border-radius:8px;padding:12px;
+  min-width:70px
+}
+.countdown strong{display:block;font-size:25px}
+#musikBtn{
+  position:fixed;right:18px;bottom:20px;
+  width:50px;height:50px;border-radius:50%;
+  padding:0;z-index:5;display:none
+}
+footer{padding:30px;background:#e7d6c3}
+[hidden]{display:none!important}
+@media(min-width:700px){
+  .profiles{display:flex;justify-content:center;gap:20px}
+}
+</style>
+</head>
+
+<body>
+
+<audio id="musik" loop preload="auto">
+  <source src="Surat Undangan - Poppy Mercury (Lirik) - Uranus Project.mp3">
+</audio>
+
+<div class="cover" id="cover">
+  <div>
+    <p class="small">UNDANGAN PERNIKAHAN</p>
+    <h1>Oman <span style="color:#e7c99e">&</span> Siti</h1>
+    <p>20 Desember 2026</p>
+    <p style="margin-top:25px">Kepada Yth.</p>
+    <p id="tamu">Bapak/Ibu/Saudara/i</p>
+    <button onclick="bukaUndangan()">💌 Buka Undangan</button>
+  </div>
+</div>
+
+<main id="isi" hidden>
+
+<section>
+  <p class="small">BISMILLAHIRRAHMANIRRAHIM</p>
+  <h2>Assalamu'alaikum Wr. Wb.</h2>
+  <p>Dengan penuh rasa syukur, kami mengundang
+  Bapak/Ibu dan sahabat untuk hadir di hari bahagia kami.</p>
+  <p class="names" style="margin-top:25px">Oman & Siti</p>
+</section>
+
+<section class="alt">
+  <p class="small">KEDUA MEMPELAI</p>
+  <h2>Pasangan Bahagia</h2>
+  <div class="profiles">
+    <div class="profile">
+      <img src="ml.jpg"
+           alt="Foto contoh mempelai pria">
+      <h2>Oman</h2>
+      <p>Putra dari Bapak ahmad dan Ibu aminah</p>
+    </div>
+    <div class="profile">
+      <img src="ff.jpg"
+           alt="Foto contoh mempelai wanita">
+      <h2>Siti</h2>
+      <p>Putri dari Bapak kohar dan Ibu otih</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <p class="small">HARI BAHAGIA KAMI</p>
+  <h2>Menuju Pernikahan</h2>
+  <div class="countdown">
+    <div><strong id="hari">0</strong>Hari</div>
+    <div><strong id="jam">0</strong>Jam</div>
+    <div><strong id="menit">0</strong>Menit</div>
+    <div><strong id="detik">0</strong>Detik</div>
+  </div>
+  <p id="pesan"></p>
+</section>
+
+<section class="alt">
+  <p class="small">CATAT TANGGALNYA</p>
+  <h2>Akad & Resepsi</h2>
+  <div class="card">
+    <h2>Akad Nikah</h2>
+    <p>Minggu, 20 Desember 2026</p>
+    <p>Pukul 08.00 WIB</p>
+    <p>[Alamat tempat akad]</p>
+  </div>
+  <div class="card">
+    <h2>Resepsi</h2>
+    <p>Minggu, 20 Desember 2026</p>
+    <p>Pukul 11.00–14.00 WIB</p>
+    <p>[Alamat tempat resepsi]</p>
+  </div>
+  <a class="btn" href="https://maps.google.com/"
+     target="_blank" rel="noopener">📍 Buka Google Maps</a>
+</section>
+
+<section>
+  <p class="small">KENANGAN INDAH</p>
+  <h2>Foto Prewedding</h2>
+  <p>Foto contoh sementara. Ganti dengan foto kalian sendiri.</p>
+  <div class="photos">
+    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=700" alt="Prewedding contoh 1">
+    <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=700" alt="Prewedding contoh 2">
+    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=700" alt="Prewedding contoh 3">
+    <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?w=700" alt="Prewedding contoh 4">
+  </div>
+</section>
+
+<section class="alt">
+  <h2>Terima Kasih</h2>
+  <p>Doa restu Anda merupakan kebahagiaan bagi kami.</p>
+  <p class="names">Oman & Siti ❤️</p>
+  <p>Wassalamu'alaikum Wr. Wb.</p>
+</section>
+
+</main>
+
+<button id="musikBtn" onclick="toggleMusik()" aria-label="Putar musik">▶</button>
+
+<footer>
+  Undangan Pernikahan Oman & Siti · 2026
+</footer>
+
+<script>
+const musik = document.getElementById("musik");
+const tombolMusik = document.getElementById("musikBtn");
+
+function bukaUndangan(){
+  document.getElementById("cover").hidden = true;
+  document.getElementById("isi").hidden = false;
+  tombolMusik.style.display = "block";
+
+  // Musik dicoba setelah pengunjung menekan tombol.
+  musik.play().then(()=>{
+    tombolMusik.textContent = "Ⅱ";
+  }).catch(()=>{
+    tombolMusik.textContent = "▶";
+  });
+
+  window.scrollTo(0,0);
+}
+
+function toggleMusik(){
+  if(musik.paused){
+    musik.play().then(()=>{
+      tombolMusik.textContent = "Ⅱ";
+    }).catch(()=>{
+      alert("Periksa file lagu.mp3 di folder undangan.");
+    });
+  }else{
+    musik.pause();
+    tombolMusik.textContent = "▶";
+  }
+}
+
+const tanggalNikah = new Date("2026-12-20T08:00:00+07:00").getTime();
+
+function hitungMundur(){
+  const selisih = tanggalNikah - Date.now();
+
+  if(selisih <= 0){
+    document.getElementById("hari").textContent = "0";
+    document.getElementById("jam").textContent = "0";
+    document.getElementById("menit").textContent = "0";
+    document.getElementById("detik").textContent = "0";
+    document.getElementById("pesan").textContent =
+      "Hari bahagia telah tiba ❤️";
+    return;
+  }
+
+  document.getElementById("hari").textContent =
+    Math.floor(selisih / 86400000);
+  document.getElementById("jam").textContent =
+    Math.floor(selisih / 3600000) % 24;
+  document.getElementById("menit").textContent =
+    Math.floor(selisih / 60000) % 60;
+  document.getElementById("detik").textContent =
+    Math.floor(selisih / 1000) % 60;
+}
+
+hitungMundur();
+setInterval(hitungMundur,1000);
+
+// Nama tamu opsional: index.html?to=Bapak%20Budi
+const namaTamu = new URLSearchParams(location.search).get("to");
+if(namaTamu){
+  document.getElementById("tamu").textContent =
+    namaTamu.slice(0,100);
+}
+</script>
+
+</body>
+</html>
